@@ -1,0 +1,129 @@
+.menu-item .menu-link:hover,
+[data-kt-app-layout='dark-sidebar']
+  .app-sidebar
+  .menu
+  .menu-item
+  .menu-link.active {
+  background-color: #1f2442;
+}
+
+.employee-profile {
+  text-align: center;
+  padding: 10px 10px 20px 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #393945;
+}
+
+.employee-profile img {
+  width: 85px;
+  height: 85px;
+}
+
+.employee-profile div.employee-info {
+  margin-top: 10px;
+}
+
+.employee-profile div.employee-info div.employee-name {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.employee-profile div.employee-info div.employee-access-group {
+  color: #b5b5c3;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.language-switcher {
+  padding: 10px;
+  display: flex;
+}
+
+[data-kt-app-layout='dark-sidebar'] .app-sidebar .app-sidebar-logo {
+  border-right: 1px dashed #393945;
+}
+
+.subheader-separator.subheader-separator-ver {
+  width: 1px;
+  height: 30px;
+}
+
+.subheader-separator {
+  display: block;
+  width: 12px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+body {
+  background-color: #edeef7 !important;
+}
+
+.symbol .symbol-label {
+  background-color: transparent;
+}
+
+.card .card-header {
+  border-bottom: 1px solid #edeef7;
+}
+
+.card .card-footer {
+  border-top: 1px solid #edeef7;
+}
+
+.form-label {
+  margin-bottom: 0;
+}
+
+.menu-state-color
+  .menu-item:not(.here)
+  .menu-link:hover:not(.disabled):not(.active):not(.here),
+.btn-primary-theme {
+  background-color: #18315a;
+  color: #ffffff;
+}
+
+.btn-primary-theme:hover {
+  background-color: #1f2442;
+  color: #ffffff;
+}
+
+.btn-primary-theme i {
+  color: #ffffff;
+}
+
+.form-control,
+.form-select {
+  font-weight: 400;
+  color: var(--bs-gray-900);
+}
+
+.input-group .input-group-text i {
+  font-size: 1.1rem;
+}
+
+.form-check.form-check-solid .form-check-input:not(:checked) {
+  border: 1px solid var(--bs-gray-400);
+}
+
+.border-2 {
+  border-bottom-width: 2px;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.overlay-layer.pdf-file {
+  width: 100% !important;
+  height: 150px;
+}
+
+@media only screen and (min-width: 820px) {
+  .uppy-Dashboard-inner {
+    width: 100% !important;
+  }
+}

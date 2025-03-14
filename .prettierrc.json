@@ -1,0 +1,9 @@
+{
+  "phpVersion": "8.2",
+  "trailingCommaPHP": true,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "semi": true,
+  "singleQuote": true,
+  "braceStyle": "1tbs"
+}

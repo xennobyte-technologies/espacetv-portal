@@ -1,16 +1,16 @@
 {
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "build": "vite build",
-        "dev": "vite"
-    },
-    "devDependencies": {
-        "@tailwindcss/vite": "^4.0.0",
-        "axios": "^1.7.4",
-        "concurrently": "^9.0.1",
-        "laravel-vite-plugin": "^1.2.0",
-        "tailwindcss": "^4.0.0",
-        "vite": "^6.0.11"
-    }
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "format": "prettier docker-compose.yml app/** resources/** config/* lang/** public/assets/js/auth/** public/assets/css/auth.css public/assets/css/home.css --write"
+  },
+  "devDependencies": {
+    "@prettier/plugin-php": "0.19.5",
+    "axios": "1.8.1",
+    "laravel-vite-plugin": "0.7.5",
+    "prettier": "2.8.8",
+    "vite": "4.0.0"
+  }
 }
