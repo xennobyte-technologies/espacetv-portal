@@ -37,6 +37,13 @@ Route::group(['middleware' => ['web', 'auth']], function() {
       Route::get('/', 'Auth\Account\MyPaymentsController@page')->name('pageAccountMyPayments');
       Route::post('/search', 'Auth\Account\MyPaymentsController@searchMyPayments')->name('controllerAccountMyPaymentsSearchMyPayments');
     });
+    Route::prefix('my-orders')->group(function () {
+      Route::get('/', 'Auth\Account\MyOrdersController@page')->name('pageAccountMyOrders');
+      Route::post('/search', 'Auth\Account\MyOrdersController@searchMyOrders')->name('controllerAccountMyOrdersSearchMyOrders');
+    });
+    Route::prefix('my-wallets')->group(function () {
+      Route::get('/', 'Auth\Account\MyWalletsController@page')->name('pageAccountMyWallets');
+    });
   });
 
   /** MANAGEMENT */
@@ -60,9 +67,12 @@ Route::group(['middleware' => ['web', 'auth']], function() {
     Route::prefix('orders')->group(function () {
       Route::get('/', 'Auth\Management\OrdersController@page')->name('pageManagementOrders');
       Route::post('/search', 'Auth\Management\OrdersController@searchOrders')->name('controllerManagementOrdersSearchOrders');
-      Route::post('/add', 'Auth\Management\OrdersController@addOrder')->name('controllerManagementOrdersAddOrder');
-      Route::post('/get', 'Auth\Management\OrdersController@getOrder')->name('controllerManagementOrdersGetOrder');
-      Route::post('/update', 'Auth\Management\OrdersController@updateOrder')->name('controllerManagementOrdersUpdateOrder');
+    });
+
+    /** Wallets */
+    Route::prefix('wallets')->group(function () {
+      Route::get('/', 'Auth\Management\WalletsController@page')->name('pageManagementWallets');
+      Route::post('/search', 'Auth\Management\WalletsController@searchWallets')->name('controllerManagementWalletsSearchWallets');
     });
   });
 });

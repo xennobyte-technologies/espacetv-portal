@@ -1,14 +1,14 @@
 @extends('auth.layouts.app')
 
-@section('page-title'){{ __('auth/management/orders.title') }} @endsection
-@section('page-subtitle'){{ __('auth/management/orders.description') }} @endsection
+@section('page-title'){{ __('auth/account/my-orders.title') }} @endsection
+@section('page-subtitle'){{ __('auth/account/my-orders.description') }} @endsection
 @section('javascript')
 <script>
-  var language = '<?php echo json_encode(__('auth/management/orders')); ?>';
+  var language = '<?php echo json_encode(__('auth/account/my-orders')); ?>';
   var languageCommon = '<?php echo json_encode(__('auth/common')); ?>';
 
 </script>
-<script src="{{ asset('assets/js/auth/management/orders.js') }}"></script>
+<script src="{{ asset('assets/js/auth/account/my-orders.js') }}"></script>
 @endsection
 
 @inject('helpers', 'App\Library\Helpers')
@@ -18,38 +18,29 @@
   <div class="mb-5">
     <div class="card card-bordered">
       <div class="card-header">
-        <h3 class="card-title">{{ __('auth/management/orders.title') }}</h3>
+        <h3 class="card-title">{{ __('auth/account/my-orders.title') }}</h3>
         <div class="card-toolbar flex-row-fluid justify-content-end gap-5"></div>
       </div>
       <div class="card-body">
         <!-- Search Form -->
-        <form method="POST" action="{{ route('controllerManagementOrdersSearchOrders') }}">
+        <form method="POST" action="{{ route('controllerAccountMyOrdersSearchMyOrders') }}">
           @csrf
           <div class="row">
             <!-- Order Number -->
             <div class="col-lg-6 col-md-12 mb-7">
-              <label class="form-label mb-2">{{ __('auth/management/orders.order-number') }}</label>
+              <label class="form-label mb-2">{{ __('auth/account/my-orders.order-number') }}</label>
               <div class="input-group">
                 <span class="input-group-text"><i class="fa-solid fa-file-lines"></i></span>
-                <input type="text" name="order-number" class="form-control" placeholder="{{ __('auth/management/orders.order-number-placeholder') }}" />
-              </div>
-            </div>
-
-            <!-- Order User Id -->
-            <div class="col-lg-6 col-md-12 mb-7">
-              <label class="form-label mb-2">{{ __('auth/management/orders.user-id') }}</label>
-              <div class="input-group">
-                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-                <input type="text" name="user-id" class="form-control" placeholder="{{ __('auth/management/orders.user-id-placeholder') }}" />
+                <input type="text" name="order-number" class="form-control" placeholder="{{ __('auth/account/my-orders.order-number-placeholder') }}" />
               </div>
             </div>
 
             <!-- Order Created At -->
             <div class="col-lg-6 col-md-12 mb-7">
-              <label class="form-label mb-2">{{ __('auth/management/orders.created-at') }}</label>
+              <label class="form-label mb-2">{{ __('auth/account/my-orders.created-at') }}</label>
               <div class="input-group">
                 <span class="input-group-text"><i class="fa-solid fa-calendar-alt"></i></span>
-                <input type="text" name="created-at" autocomplete="off" class="full-daterangepicker form-control" placeholder="{{ __('auth/management/orders.created-at-placeholder') }}" />
+                <input type="text" name="created-at" autocomplete="off" class="full-daterangepicker form-control" placeholder="{{ __('auth/account/my-orders.created-at-placeholder') }}" />
               </div>
             </div>
 
@@ -81,17 +72,16 @@
         </div>
 
         <!-- Datatable -->
-        <table id="management_orders_table" class="table table-striped border rounded gy-5 gs-7">
+        <table id="account_my_orders_table" class="table table-striped border rounded gy-5 gs-7">
           <thead class="table-dark">
             <tr class="fw-semibold fs-6 text-white">
               <th>#</th>
-              <th data-priority="1">{{ __('auth/management/orders.order-id') }}</th>
-              <th>{{ __('auth/management/orders.order-number') }}</th>
-              <th>{{ __('auth/management/orders.user-id') }}</th>
-              <th>{{ __('auth/management/orders.category-type') }}</th>
-              <th>{{ __('auth/management/orders.category-id') }}</th>
-              <th>{{ __('auth/management/orders.amount') }}</th>
-              <th>{{ __('auth/management/orders.created-at') }}</th>
+              <th data-priority="1">{{ __('auth/account/my-orders.order-id') }}</th>
+              <th>{{ __('auth/account/my-orders.order-number') }}</th>
+              <th>{{ __('auth/account/my-orders.category-type') }}</th>
+              <th>{{ __('auth/account/my-orders.category-id') }}</th>
+              <th>{{ __('auth/account/my-orders.amount') }}</th>
+              <th>{{ __('auth/account/my-orders.created-at') }}</th>
               <th>{{ __('auth/common.status') }}</th>
             </tr>
           </thead>
@@ -105,7 +95,6 @@
                   {{ $order->orderNumber }}
                 </span>
               </td>
-              <td>{{ $order->orderUserId }}</td>
               <td>{{ $helpers->toTitle($order->orderCategoryType) }}</td>
               <td>{{ $order->orderCategoryId }}</td>
               <td>

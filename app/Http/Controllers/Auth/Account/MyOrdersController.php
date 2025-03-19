@@ -1,32 +1,27 @@
 <?php
 
-namespace App\Http\Controllers\Auth\Management;
+namespace App\Http\Controllers\Auth\Account;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Library\Helpers;
 use App\Http\Controllers\Api\ApiController;
 
-class OrdersController extends Controller {
+class MyOrdersController extends Controller {
   private $helpers = null,
+    $userId = null,
     $api = null;
 
   public function __construct() {
+    $this->userId = session('user.id');
     $this->helpers = new Helpers();
     $this->api = new ApiController();
   }
 
   public function page() {
-    $allowedAccessGroups = ['administrator'];
-    if (!$this->helpers->isAccessGroupAllowed($allowedAccessGroups)) {
-      return redirect()
-        ->route('pageDashboard')
-        ->with('error', __('auth/common.permission-denied'));
-    }
-
     $orders = [];
     $response = $this->api->get('orders', [
-      'orderStatus' => 'active',
+      'orderUserId' => $this->userId,
       'limit' => 100,
     ]);
     if ($response->statusCode === 200) {
@@ -35,13 +30,13 @@ class OrdersController extends Controller {
 
     $statuses = $this->helpers->getCommonStatus();
 
-    return view('auth.pages.management.orders')
+    return view('auth.pages.account.my-orders')
       ->with('orders', $orders)
       ->with('statuses', $statuses)
       ->with('count', 1);
   }
 
-  public function searchOrders(Request $request) {
+  public function searchMyOrders(Request $request) {
     $request->validate([
       'order-number' => 'nullable|numeric',
       'user-id' => 'nullable|uuid',
@@ -50,12 +45,11 @@ class OrdersController extends Controller {
     ]);
 
     $orderNumber = $request->input('order-number');
-    $orderUserId = $request->input('user-id');
     $orderCreatedAt = $request->input('created-at');
     $orderStatus = $request->input('status');
     $orderStartDate = $orderEndDate = null;
 
-    $orders = [];
+    $filteredOrders = $orders = [];
     $endpoint = 'orders';
     $params = [
       'orderStatus' => 'active',
@@ -77,12 +71,6 @@ class OrdersController extends Controller {
       $params = [
         'orderNumber' => $orderNumber,
       ];
-    } elseif ($orderUserId) {
-      $endpoint = 'orders';
-      $params = [
-        'orderUserId' => $orderUserId,
-        'limit' => 100,
-      ];
     } elseif ($orderStatus) {
       $endpoint = 'orders';
       $params = [
@@ -103,10 +91,17 @@ class OrdersController extends Controller {
         : [$response->data->order];
     }
 
+    foreach ($orders as $order) {
+      if ($order->orderUserId !== $this->userId) {
+        continue;
+      }
+      array_push($filteredOrders, $order);
+    }
+
     $statuses = $this->helpers->getCommonStatus();
 
-    return view('auth.pages.management.orders')
-      ->with('orders', $orders)
+    return view('auth.pages.account.my-orders')
+      ->with('orders', $filteredOrders)
       ->with('statuses', $statuses)
       ->with('count', 1);
   }

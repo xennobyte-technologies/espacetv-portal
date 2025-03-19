@@ -1,13 +1,14 @@
 (function ($) {
   $('#management_users_table').DataTable();
 
-  closeBtnModal('#new_user_close_btn', '#add_user_modal');
+  closeBtnModal('#add_user_close_btn', '#add_user_modal');
   closeBtnModal('#edit_user_close_btn', '#edit_user_modal');
 
   $('#add_user_modal').on('show.bs.modal', function (event) {
     if (event.namespace === 'bs.modal') {
       var modal = $(this);
       clearInputFields(modal);
+      modal.find('#add_user_access_group').val('user').trigger('change');
     }
   });
 

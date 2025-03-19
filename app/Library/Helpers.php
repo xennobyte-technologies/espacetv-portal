@@ -125,7 +125,7 @@ class Helpers {
 
   public function getCurrencyFormat($value) {
     if (is_numeric($value)) {
-      return number_format($value, 2, '.', '');
+      return number_format($value, 2, '.', ',');
     }
     return $value;
   }

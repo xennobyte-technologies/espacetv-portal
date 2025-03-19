@@ -20,11 +20,23 @@
     </span>
     <span class="menu-title">{{ __('auth/sidebar.account.account-password') }}</span>
   </a>
-  <a class="menu-link mb-2 {{ $helpers->getMenuActiveClass('pageAccountMyPayments', 'active') }}" href="{{ route('pageAccountMyPayments') }}">
+  <a class="menu-link mb-2 {{ $helpers->getMenuActiveClass('pageAccountMyPayments,controllerAccountMyPaymentsSearchMyPayments', 'active') }}" href="{{ route('pageAccountMyPayments') }}">
     <span class="menu-icon">
       <i class="fa-solid fa-file-invoice-dollar"></i>
     </span>
     <span class="menu-title">{{ __('auth/sidebar.account.my-payments') }}</span>
+  </a>
+  <a class="menu-link mb-2 {{ $helpers->getMenuActiveClass('pageAccountMyOrders,controllerAccountMyOrdersSearchMyOrders', 'active') }}" href="{{ route('pageAccountMyOrders') }}">
+    <span class="menu-icon">
+      <i class="fa-solid fa-file-lines"></i>
+    </span>
+    <span class="menu-title">{{ __('auth/sidebar.account.my-orders') }}</span>
+  </a>
+  <a class="menu-link mb-2 {{ $helpers->getMenuActiveClass('pageAccountMyWallets', 'active') }}" href="{{ route('pageAccountMyWallets') }}">
+    <span class="menu-icon">
+      <i class="fa-solid fa-wallet"></i>
+    </span>
+    <span class="menu-title">{{ __('auth/sidebar.account.my-wallets') }}</span>
   </a>
   <!-- end ACCOUNT -->
 
@@ -53,6 +65,13 @@
       <i class="fa-solid fa-file-lines"></i>
     </span>
     <span class="menu-title">{{ __('auth/sidebar.management.orders') }}</span>
+  </a>
+  <!-- Wallets -->
+  <a class="menu-link mb-2 {{ $helpers->getMenuActiveClass('pageManagementWallets,controllerManagementWalletsSearchWallets', 'active') }}" href="{{ route('pageManagementWallets') }}">
+    <span class="menu-icon">
+      <i class="fa-solid fa-wallet"></i>
+    </span>
+    <span class="menu-title">{{ __('auth/sidebar.management.wallets') }}</span>
   </a>
   <!-- end MANAGEMENT -->
   @endif
