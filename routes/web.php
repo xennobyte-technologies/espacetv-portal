@@ -44,6 +44,10 @@ Route::group(['middleware' => ['web', 'auth']], function() {
     Route::prefix('my-wallets')->group(function () {
       Route::get('/', 'Auth\Account\MyWalletsController@page')->name('pageAccountMyWallets');
     });
+    Route::prefix('my-wallets-transactions')->group(function () {
+      Route::get('/', 'Auth\Account\MyWalletsTransactionsController@page')->name('pageAccountMyWalletsTransactions');
+      Route::post('/search', 'Auth\Account\MyWalletsTransactionsController@searchMyWalletsTransactions')->name('controllerAccountMyWalletsTransactionsSearchMyWalletsTransactions');
+    });
   });
 
   /** MANAGEMENT */
@@ -73,6 +77,12 @@ Route::group(['middleware' => ['web', 'auth']], function() {
     Route::prefix('wallets')->group(function () {
       Route::get('/', 'Auth\Management\WalletsController@page')->name('pageManagementWallets');
       Route::post('/search', 'Auth\Management\WalletsController@searchWallets')->name('controllerManagementWalletsSearchWallets');
+    });
+
+    /** Wallets Transactions */
+    Route::prefix('wallets-transactions')->group(function () {
+      Route::get('/', 'Auth\Management\WalletsTransactionsController@page')->name('pageManagementWalletsTransactions');
+      Route::post('/search', 'Auth\Management\WalletsTransactionsController@searchWalletsTransactions')->name('controllerManagementWalletsTransactionsSearchWalletsTransactions');
     });
   });
 });

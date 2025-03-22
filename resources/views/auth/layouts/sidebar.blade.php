@@ -28,7 +28,7 @@
   </a>
   <a class="menu-link mb-2 {{ $helpers->getMenuActiveClass('pageAccountMyOrders,controllerAccountMyOrdersSearchMyOrders', 'active') }}" href="{{ route('pageAccountMyOrders') }}">
     <span class="menu-icon">
-      <i class="fa-solid fa-file-lines"></i>
+      <i class="fa-solid fa-file-invoice"></i>
     </span>
     <span class="menu-title">{{ __('auth/sidebar.account.my-orders') }}</span>
   </a>
@@ -37,6 +37,12 @@
       <i class="fa-solid fa-wallet"></i>
     </span>
     <span class="menu-title">{{ __('auth/sidebar.account.my-wallets') }}</span>
+  </a>
+  <a class="menu-link mb-2 {{ $helpers->getMenuActiveClass('pageAccountMyWalletsTransactions,controllerAccountMyWalletsTransactionsSearchMyWalletsTransactions', 'active') }}" href="{{ route('pageAccountMyWalletsTransactions') }}">
+    <span class="menu-icon">
+      <i class="fa-solid fa-file-lines"></i>
+    </span>
+    <span class="menu-title">{{ __('auth/sidebar.account.my-wallets-transactions') }}</span>
   </a>
   <!-- end ACCOUNT -->
 
@@ -62,7 +68,7 @@
   <!-- Orders -->
   <a class="menu-link mb-2 {{ $helpers->getMenuActiveClass('pageManagementOrders,controllerManagementOrdersSearchOrders', 'active') }}" href="{{ route('pageManagementOrders') }}">
     <span class="menu-icon">
-      <i class="fa-solid fa-file-lines"></i>
+      <i class="fa-solid fa-file-invoice"></i>
     </span>
     <span class="menu-title">{{ __('auth/sidebar.management.orders') }}</span>
   </a>
@@ -72,6 +78,13 @@
       <i class="fa-solid fa-wallet"></i>
     </span>
     <span class="menu-title">{{ __('auth/sidebar.management.wallets') }}</span>
+  </a>
+  <!-- Wallets Transactions -->
+  <a class="menu-link mb-2 {{ $helpers->getMenuActiveClass('pageManagementWalletsTransactions,controllerManagementWalletsTransactionsSearchWalletsTransactions', 'active') }}" href="{{ route('pageManagementWalletsTransactions') }}">
+    <span class="menu-icon">
+      <i class="fa-solid fa-file-lines"></i>
+    </span>
+    <span class="menu-title">{{ __('auth/sidebar.management.wallets-transactions') }}</span>
   </a>
   <!-- end MANAGEMENT -->
   @endif

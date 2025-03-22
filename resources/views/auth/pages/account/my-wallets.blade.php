@@ -23,7 +23,7 @@
       </div>
       <div class="card-body">
         <!-- Datatable -->
-        <table id="account_my_wallets_table" class="table table-striped bwallet rounded gy-5 gs-7">
+        <table id="account_my_wallets_table" class="table table-striped bordered rounded gy-5 gs-7">
           <thead class="table-dark">
             <tr class="fw-semibold fs-6 text-white">
               <th>#</th>
