@@ -1,8 +1,8 @@
 <?php
 
 return [
-  'alert-error-title' => 'Error',
-  'alert-warning-title' => 'Warning',
-  'alert-success-title' => 'Success',
-  'alert-info-title' => 'Info',
+  'alert-error-title' => '错误',
+  'alert-warning-title' => '警告',
+  'alert-success-title' => '成功',
+  'alert-info-title' => '信息',
 ];

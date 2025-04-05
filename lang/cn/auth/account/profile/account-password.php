@@ -1,20 +1,16 @@
 <?php
 
 return [
-  'title' => 'Account Password',
-  'description' => 'Update your account password here',
-  'current-password' => 'Current Password',
-  'current-password-placeholder' => 'Enter your account\'s current password',
-  'new-password' => 'New Password',
-  'new-password-placeholder' => 'Enter your account\'s new password',
-  'confirm-new-password' => 'Confirm New Password',
-  'confirm-new-password-placeholder' =>
-    'Enter your account\'s new password again',
-  'new-password-same' =>
-    'Your new password should not be the same as your current password',
-  'invalid-current-password' => 'Your current password is incorrect',
-  'update-password-success' =>
-    'You have successfully updated your account password',
-  'update-password-failed' =>
-    'Failed to update your account password. Please try again',
+  'title' => '账户密码',
+  'description' => '在此更新您的账户密码',
+  'current-password' => '当前密码',
+  'current-password-placeholder' => '输入您账户的当前密码',
+  'new-password' => '新密码',
+  'new-password-placeholder' => '输入您账户的新密码',
+  'confirm-new-password' => '确认新密码',
+  'confirm-new-password-placeholder' => '再次输入您的账户新密码',
+  'new-password-same' => '您的新密码不应与当前密码相同',
+  'invalid-current-password' => '您当前的密码不正确',
+  'update-password-success' => '您已成功更新账户密码',
+  'update-password-failed' => '无法更新您的账户密码。请重试',
 ];

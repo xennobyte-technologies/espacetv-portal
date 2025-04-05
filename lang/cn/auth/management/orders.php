@@ -1,16 +1,16 @@
 <?php
 
 return [
-  'title' => 'Orders',
-  'description' => 'Check all orders here',
-  'order-id' => 'Order Id',
-  'order-number' => 'Order Number',
-  'order-number-placeholder' => 'Enter the order number',
-  'user-id' => 'User Id',
-  'user-id-placeholder' => 'Enter the order user id',
-  'category-type' => 'Category Type',
-  'category-id' => 'Category Id',
-  'amount' => 'Amount (Credits)',
-  'created-at' => 'Created At (UTC)',
-  'created-at-placeholder' => 'Select an order created start date and end date',
+  'title' => '订单',
+  'description' => '在这里查看所有订单',
+  'order-id' => '订单编号',
+  'order-number' => '订单号',
+  'order-number-placeholder' => '输入订单号',
+  'user-id' => '用户身份',
+  'user-id-placeholder' => '输入订单用户id',
+  'category-type' => '类别类型',
+  'category-id' => '类别 ID',
+  'amount' => '金额（学分)',
+  'created-at' => '创建时间 (UTC)',
+  'created-at-placeholder' => '选择订单创建的开始日期和结束日期',
 ];

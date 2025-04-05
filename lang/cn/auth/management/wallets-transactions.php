@@ -1,17 +1,16 @@
 <?php
 
 return [
-  'title' => 'Wallets Transactions',
-  'description' => 'Check all wallets transactions here',
-  'wallet-id' => 'Wallet Id',
-  'transaction-id' => 'Transaction Id',
-  'transaction-id-placeholder' => 'Enter the transaction id',
-  'wallet-id-placeholder' => 'Enter the wallet id',
-  'amount' => 'Amount (Credits)',
-  'category-id' => 'Category Id',
-  'category-type' => 'Category Type',
-  'transaction-type' => 'Transaction Type',
-  'created-at' => 'Created At (UTC)',
-  'created-at-placeholder' =>
-    'Select a wallet transaction created start date and end date',
+  'title' => '钱包交易',
+  'description' => '在这里查看所有钱包交易',
+  'wallet-id' => '钱包ID',
+  'transaction-id' => '交易编号',
+  'transaction-id-placeholder' => '输入交易编号',
+  'wallet-id-placeholder' => '输入钱包ID',
+  'amount' => '金额（学分)',
+  'category-id' => '类别 ID',
+  'category-type' => '类别类型',
+  'transaction-type' => '交易类型',
+  'created-at' => '创建时间 (UTC)',
+  'created-at-placeholder' => '选择钱包交易创建的开始日期和结束日期',
 ];
